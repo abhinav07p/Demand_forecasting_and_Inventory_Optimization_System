@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: demand_ops_db
+    environment:
+      POSTGRES_DB: demand_ops
+      POSTGRES_USER: demand_ops
+      POSTGRES_PASSWORD: demand_ops
+    ports:
+      - "5433:5432"
+    volumes:
+      - demand_ops_pgdata:/var/lib/postgresql/data
+
+volumes:
+  demand_ops_pgdata:
